@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Spring Boot Thymeleaf Hello World Example</title>
+    <script type="text/javascript" src="webjars/jquery/3.4.1/css/jquery.min.js"></script>
+    <script type="text/javascript" src="webjars/bootstrap/4.3.1/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="webjars/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/main.css"/>
+</head>
+<body>
+<div class="container">
+    <h1 class="text-center">Employee Management System</h1>
+    <hr>
+    <h2>Save Employee</h2>
+    <form action="#" th:action="@{/addEmployee}" th:object="${employee}" method="POST">
+        <input type="text" th:field="*{firstName}" placeholder="Enter First Name" class="form-control mb-4 col-4">
+        <input type="text" th:field="*{lastName}" placeholder="Enter Last Name" class="form-control mb-4 col-4">
+        <input type="text" th:field="*{email}" placeholder="Enter Email" class="form-control mb-4 col-4">
+        <button type="submit" class="btn btn-info col-2">Save Employee</button>
+    </form>
+    <hr>
+    <a th:href="@{/}"> Back to Employee List</a>
+</div>
+</body>
+</html>

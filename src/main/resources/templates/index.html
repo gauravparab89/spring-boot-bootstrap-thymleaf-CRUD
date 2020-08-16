@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Employee Management System</title>
+    <script type="text/javascript" src="webjars/jquery/3.4.1/css/jquery.min.js"></script>
+    <script type="text/javascript" src="webjars/bootstrap/4.3.1/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/main.css"/>
+</head>
+<body>
+<div class="container mt-2">
+    <h1 class="text-center">Employee Management System</h1>
+    <hr>
+    <h3>Employee List</h3>
+    <div class="row">
+        <div class="col text-left">
+            <a th:href="@{/showNewEmployeeForm}" class="btn btn-primary btn-sm mb-1" role="button">Add Employee</a>
+        </div>
+    </div>
+    <table class="table table-hover table-striped table-bordered table-sm">
+        <thead class="bg-secondary text-center">
+        <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+        </tr>
+        </thead>
+        <tbody class="text-center">
+        <tr th:each="employee:${listEmployees}">
+            <td th:text="${employee.id}"></td>
+            <td th:text="${employee.firstName}">Indiana</td>
+            <td th:text="${employee.lastName}">Delhi</td>
+            <td th:text="${employee.email}">Delhi</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
